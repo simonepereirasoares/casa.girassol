@@ -1,0 +1,315 @@
+body {
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color:  #ff3613;
+    height: 200vh;
+    position: relative; }
+    body:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      -webkit-transition: .3s all ease;
+      -o-transition: .3s all ease;
+      transition: .3s all ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1; }
+    body.offcanvas-menu:before {
+      opacity: 1;
+      z-index: 1002;
+      visibility: visible; }
+      .site-menu-toggle {
+        font-size: 7px; 
+        background-color: #333; 
+        color: #fff; 
+        padding: 7px 15px; 
+        border-radius: 5px; 
+        border: 2px solid #000; 
+        display: inline-block; 
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s; 
+      }
+      
+  p {
+    color: #000000;
+    font-weight: 300; }
+  
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Brush Script', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  
+  a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    a, a:hover {
+      text-decoration: none !important; }
+  
+  .hero {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; }
+  
+  /* Logo */
+  .site-logo img {
+    max-width: 70px;
+  }
+  
+  /* Barra de navegação */
+  .site-navbar {
+    background: transparent; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .servicos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards se ajustem em várias linhas se necessário */
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 260px; /* Define um valor mínimo para que os cards não fiquem muito pequenos */
+    max-width: 300px;
+    position: relative;
+    height: auto; /* Permite que a altura se ajuste com o conteúdo */
+    background: linear-gradient(-45deg, #039427b7 0%, #b8860b 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .card img {
+    width: 100%; /* Assegura que a imagem ocupe toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Assegura que a imagem cubra todo o espaço disponível */
+  }
+  
+  .card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .card:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff57;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow-y: auto;
+  }
+  
+  .card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+    font-weight: 700;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+  }
+  
+  /* Ajustes para telas menores */
+  @media (max-width: 768px) {
+    .servicos {
+        flex-direction: column; /* Empilha os cards verticalmente */
+        align-items: center;
+    }
+  
+    .card {
+        max-width: 100%; /* Permite que os cards ocupem toda a largura em telas menores */
+        margin-bottom: 20px; /* Espaçamento entre os cards */
+    }
+  
+    .card__content {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        opacity: 1;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card__title {
+        font-size: 18px;
+    }
+  
+    .card__description {
+        font-size: 12px;
+    }
+  }
+  .imagem-personalizada {
+    width: 560px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .imagem-personalizada:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  .thought-bubble {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .bubble {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(124, 112, 112, 0.7); /* Cor de fundo */
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .bubble:nth-child(1) {
+    top: 100%;
+    left: 25%;
+    animation: float 3s infinite ease-in-out;
+  }
+  
+  .bubble:nth-child(2) {
+    top: 110%;
+    left: 50%;
+    animation: float 3s infinite ease-in-out 0.5s;
+  }
+  
+  .bubble:nth-child(3) {
+    top: 120%;
+    left: 75%;
+    animation: float 3s infinite ease-in-out 1s;
+  }
+  
+  .main-bubble {
+    width: 150px;
+    height: 100px;
+    background-color: rgba(124, 112, 112, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* Animação para as bolhas menores */
+  @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+  /* pq terapia */ 
+  .cards {
+    display: flex;
+    justify-content: space-around; /* Distribui os cards de forma uniforme */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px; /* Adiciona espaçamento ao redor do grupo de cards */
+    margin: 0 40px; /* Adiciona margem nas laterais para evitar que fique colado na borda da tela */
+  }
+  
+  .cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 150px; /* Mantém a altura */
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    flex-basis: 30%; /* Os cards ocupam até 30% do espaço, ajustando a responsividade */
+  }
+  
+  
+  .cards .red {
+    background-color: #f43f5e;
+  }
+  
+  .cards .blue {
+    background-color: #3b82f6;
+  }
+  
+  .cards .green {
+    background-color: #22c55e;
+  }
+  
+  .cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .cards .card p.second-text {
+    font-size: 0.9em;
+  }
+  
+  .cards .card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
